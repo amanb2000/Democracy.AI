@@ -14,7 +14,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../static/style.css">
+
+    <!-- Open Sans Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div class = "container">
@@ -32,13 +35,21 @@
 				<p class = "description">
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 				</p>
+				<div class = "buttonsDiv">
+					<button class="downloadBtn btn btn-primary btn-lg btn-block">Download</button>
+					<button class="upVoteBtn btn btn-primary btn-lg">Upvote</button>
+					<button class="downVoteBtn btn btn-primary btn-lg">DownVote</button>
+					<button class="saveBtn btn btn-primary btn-lg">Save</button>
+					<button class="reportBtn btn btn-primary btn-lg">Report</button>
+				</div>
 			</div>
 			<div class = "col-sm-6 cardRight">
-				<h3 class = "authorName">By Bigg Mann</h3>
+				<h3 class = "authorName">By <a href="">Bigg Mann</a></h3>
 				<div class="picDiv">
-					<img class = "profilePicture" src = "../assets/adam.jpg" />
+					<img class = "profilePicture" src = "../static/assets/adam.jpg" />
+					<p class="picDesc">I'm just a fun loving guy who likes long walks on the beach.</p>
 				</div>
-				<button>Download</button>
+				<br />
 			</div>
 
 		</div>

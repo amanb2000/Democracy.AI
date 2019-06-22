@@ -1,3 +1,7 @@
+* {
+	font-family: 'Open Sans', sans-serif;
+}
+
 .card {
 	/*background-color: #000;*/
 	/*color: #FFF;*/
@@ -7,6 +11,52 @@
 	/*background-color: red;*/
 }
 
-* {
-	
+.cardRight {
+	/*align-content: right;*/
+	text-align: right;
+	/*padding-left: 50%;*/
+}
+
+.profilePicture {
+	width: 50%;
+}
+
+.picDesc {
+	font-size: 12pt;
+	color: #444444;
+	font-style: italic;
+}
+
+.downloadBtn {
+	margin-bottom: 5px;
+	background-color: #00a82f;
+}
+
+.upVoteBtn {
+	background-color: #d100bc;
+}
+.downVoteBtn {
+	background-color: #003ed1;
+}
+.saveBtn {
+	background-color: #d18000;
+}
+.reportBtn {
+	background-color: #AAAAAA;
+}
+
+p {
+	font-size: 14pt;
+}
+
+h2 {
+	font-size: 28pt;
+}
+
+h3 {
+	font-size: 24pt;
+}
+
+h4 {
+
 }
