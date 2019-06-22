@@ -4,7 +4,7 @@ from flaskext.mysql import MySQL
 
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_object('config')
-app.config.from_pyfile('config.py')
+app.config.from_file('config.py')
 
 # Add Key for security things
 
@@ -20,4 +20,4 @@ def get_conn():
     g.conn = mysql.get_db()
     return g.conn
 
-from di import views
+from wes import views
