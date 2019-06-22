@@ -18,6 +18,9 @@
 
     <!-- Open Sans Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- JQuery for server requests -->
+    <script src = "../static/control.js"></script>
 </head>
 <body>
 	<div class = "container">
@@ -36,11 +39,11 @@
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 				</p>
 				<div class = "buttonsDiv">
-					<button class="downloadBtn btn btn-primary btn-lg btn-block">Download</button>
-					<button class="upVoteBtn btn btn-primary btn-lg">Upvote</button>
-					<button class="downVoteBtn btn btn-primary btn-lg">DownVote</button>
-					<button class="saveBtn btn btn-primary btn-lg">Save</button>
-					<button class="reportBtn btn btn-primary btn-lg">Report</button>
+					<button onclick = "return download(ID)" class="downloadBtn btn btn-success btn-lg btn-block">Download</button>
+					<button onclick = "return vote(ID, 1)" class="upVoteBtn btn btn-info btn-lg">Upvote</button>
+					<button onclick = "return vote(ID, -1)" class="downVoteBtn btn btn-warning btn-lg">DownVote</button>
+					<button onclick = "return save(ID)" class="saveBtn btn btn-default btn-lg">Save</button>
+					<button onclick = "return report(ID)" class="reportBtn btn btn-danger btn-lg">Report</button>
 				</div>
 			</div>
 			<div class = "col-sm-6 cardRight">

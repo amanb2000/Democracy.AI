@@ -33,16 +33,19 @@
 }
 
 .upVoteBtn {
-	background-color: #d100bc;
+	/*background-color: #ffc17f;*/
 }
 .downVoteBtn {
-	background-color: #003ed1;
+	/*background-color: #003ed1;*/
 }
 .saveBtn {
-	background-color: #d18000;
+	/*background-color: #d18000;*/
+	float: right;
 }
 .reportBtn {
-	background-color: #AAAAAA;
+	/*background-color: #AAAAAA;*/
+	float: right;
+	margin-right: 5px;
 }
 
 p {
