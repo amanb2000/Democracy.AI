@@ -1,5 +1,16 @@
 from di import app
 from flask import request
+from flask_bcrypt import generate_password_hash, check_password_hash
+
+@app.route("/addUser", methods=['POST'])
+def add_user():
+	# Get DB
+    cursor = get_conn().cursor()
+    # Build query
+    query = "INSERT INTO users (username, password, email) VALUES (%s, %s, %s)"
+    cursor.execute(query, (request.form['user'], generate_password_hash(request.form['password']), request.form['email']))
+    get_conn().commit()
+    return ""
 
 @app.route("/downloadML", methods=['POST'])
 def download_bigboi():

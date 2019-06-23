@@ -13,3 +13,11 @@ def instantiate_home():
     return render_template("schema1.html",
         learns=cursor.fetchall()
     )
+
+@app.route("/login")
+def instantiate_login():
+	return render_template("login/login.html")
+
+@app.route("/register")
+def instantiate_register():
+	return render_template("login/register.html")

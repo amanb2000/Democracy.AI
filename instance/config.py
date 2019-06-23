@@ -4,3 +4,5 @@ MYSQL_DATABASE_HOST = "localhost"
 MYSQL_DATABASE_USER = "root"
 MYSQL_DATABASE_PASSWORD = "root"
 MYSQL_DATABASE_DB = "di_main"
+
+SERVER_KEY='R/}MKP9.=+<|%knY1mJl#/XO8z&#oC$woR5(E^Du?LJ^{48cX#Z@Aw!:<TGyDey'

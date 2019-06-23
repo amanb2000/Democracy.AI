@@ -1,4 +1,4 @@
 export FLASK_APP=di
-export FLASK_ENV=development
+export FLASK_ENV=production
 pip install -e .
-flask run
+flask run --host=0.0.0.0

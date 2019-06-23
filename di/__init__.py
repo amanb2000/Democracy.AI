@@ -7,7 +7,7 @@ app.config.from_object('config')
 app.config.from_pyfile('config.py')
 
 # Add Key for security things
-
+app.secret_key = app.config['SECRET_KEY']
 # Connection
 mysql = MySQL()
 mysql.init_app(app)
