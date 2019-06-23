@@ -31,32 +31,34 @@
 				<hr class="my-4">
 			</div>
 		</div>
-		
+
+		{% for row in learns %}
 		<div class = "card">
 			<div class = "col-sm-6 cardLeft">
-				<h2 class = "cardTitle">Cancer Classification</h2>
+				<h2 class = "cardTitle">{{ row[1] }}</h2>
 				<p class = "description">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					{{ row[2] }}
 				</p>
 				<div class = "buttonsDiv">
-					<button onclick = "return download(ID)" class="downloadBtn btn btn-success btn-lg btn-block">Download</button>
-					<button onclick = "return vote(ID, 1)" class="upVoteBtn btn btn-info btn-lg">Upvote</button>
-					<button onclick = "return vote(ID, -1)" class="downVoteBtn btn btn-warning btn-lg">DownVote</button>
-					<button onclick = "return save(ID)" class="saveBtn btn btn-default btn-lg">Save</button>
-					<button onclick = "return report(ID)" class="reportBtn btn btn-danger btn-lg">Report</button>
+					<button onclick = "return download('{{ row[0] }}')" class="downloadBtn btn btn-success btn-lg btn-block">Download</button>
+					<button onclick = "return vote('{{ row[0] }}', 1)" class="upVoteBtn btn btn-info btn-lg">Upvote</button>
+					<button onclick = "return vote('{{ row[0] }}', -1)" class="downVoteBtn btn btn-warning btn-lg">DownVote</button>
+					<button onclick = "return save('{{ row[0] }}')" class="saveBtn btn btn-default btn-lg">Save</button>
+					<button onclick = "return report('{{ row[0] }}')" class="reportBtn btn btn-danger btn-lg">Report</button>
 				</div>
 			</div>
 			<div class = "col-sm-6 cardRight">
-				<h3 class = "authorName">By <a href="">Bigg Mann</a></h3>
+				<h3 class = "authorName">By <a href="https://www.google.com/search?client=ubuntu&hs=q79&channel=fs&ei=BYsOXfKTOYa7tQaenKygBw&q=am+I+ugly%3F&oq=am+I+ugly%3F&gs_l=psy-ab.3..0l10.2640.7652..7867...4.0..1.428.2003.12j2j2j0j1......0....1..gws-wiz.....0..0i71j0i30j0i22i30j0i10j0i67.ucNyRQClslA">{{ row[4] }}</a></h3>
 				<div class="picDiv">
-					<img class = "profilePicture" src = "../static/assets/adam.jpg" />
-					<p class="picDesc">I'm just a fun loving guy who likes long walks on the beach.</p>
+					<img class = "profilePicture" src = "{{ row[3] }}" />
+					<!-- <p class="picDesc">I'm just a fun loving guy who likes long walks on the beach.</p> -->
 				</div>
 				<br />
 			</div>
 
 		</div>
-	
+		{% endfor %}
+
 
 
 
