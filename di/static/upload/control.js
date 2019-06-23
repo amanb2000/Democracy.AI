@@ -48,9 +48,9 @@ app.controller("control", function($scope, $interval) {
       field = $(dom);
       argsDict[field.children().first().html()] = field.children().first().next().html();
     });
-    // POST ML 
+    // POST ML
     $.post({
-      url: "/ecsdee",
+      url: "/addAlgoFile",
       cache: false,
       contentType: false,
       processData: false,
@@ -60,7 +60,7 @@ app.controller("control", function($scope, $interval) {
       success: function(data) {
         // POST DATAS
         $.post({
-          url: "/ecsdee2",
+          url: "/addAlgoData",
           data: {
             'title': $('#title').val(),
             'description': $('#description').val(),
