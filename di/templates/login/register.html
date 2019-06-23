@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Draft 1</title>
+
+	<!-- BOOTSTRAP IMPORTS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../static/style.css">
+
+    <!-- Open Sans Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- JQuery for server requests -->
+    <script src = "../static/control.js"></script>
+</head>
+<body>
+	<div class = "container">
+		<div class = "col-sm-12">
+			<div class="jumbotron">
+				<h1 class="">Register: Demo_Intel</h1>
+				<hr class="my-4">
+			</div>
+		</div>
+    <div class="col-sm-6">
+      <h3>Username: <h3> <input type="text" name="username" id="username" class="form-control">
+      <h3>Password: </h3> <input type="password" name="password" id="pass" class="form-control">
+      <h3>Confirm Password: </h3> <input type="password" name="password2" id="pass2" class="form-control">
+      <h3>Email: </h3> <input type="email" name="email" id="email" class="form-control">
+      <br />
+      <input type="submit" onclick="register()" class="btn btn-primary btn-lg btn-block">
+    </div>
+
+  <script>
+    function login() {
+      var usr = $('#username').val();
+      var pss = $('#pass').val();
+      var pss2 = $('#pass2').val();
+      var email = $('#email').val();
+
+      if(pss!=pss2){
+        alert('Passwords don\'t match');
+        return;
+      }
+
+      console.log('Username: ' + usr);
+      console.log('Password: ' + pss);
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+</body>
+</html>
