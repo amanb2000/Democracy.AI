@@ -70,7 +70,7 @@ app.controller("control", function($scope, $interval) {
             'args': argsDict
           },
           success: function(dt) {
-            console.log("Closing the loading dots that bae made <3");
+            window.location.href = "/";
           }
         });
       }

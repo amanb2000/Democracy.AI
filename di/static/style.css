@@ -7,6 +7,10 @@
 	/*color: #FFF;*/
 }
 
+.buttonsDiv{
+	float: bottom;
+}
+
 .cardLeft, .cardRight {
 	/*background-color: red;*/
 }
