@@ -3,10 +3,14 @@ from flask import request
 
 @app.route("/downloadML", methods=['POST'])
 def download_bigboi():
+	id = request.form['id']
     return "no can do, soz"
 
 @app.route("/voteML", methods=['POST'])
 def vote_boi():
+	query = ""
+	cursor.execute(query, (id, poopaa, foobar))
+	# INSERT INTO TABLENAME (COLUMN1, COLUMN2, COLUMN3) VALUES (%s, %s, %s)
     return "Vote kinda received :)"
 
 @app.route("/bookmarkML", methods=['POST'])

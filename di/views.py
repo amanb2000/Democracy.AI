@@ -6,7 +6,6 @@ def instantiate_home():
     # Get DB
     cursor = get_conn().cursor()
     # Make request
-    cursor.execute("SELECT ")
-    return render_template("schema1.html",
-        learns=cursor.fetchall()
+    # cursor.execute("SELECT ")
+    return render_template("schema1.html"
     )
