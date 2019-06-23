@@ -5,36 +5,39 @@
       <hr class="my-4">
     </div>
 
-    <form action="/" method="post"> <!-- TODO: Ask what the API endpoint is -->
-    	Title: <input class="form-control" type="text" name="Title" ng-model="addSurvey.title">
-    	Description: <textarea class="form-control" rows="10" cols="30" name="Description" ng-model="addSurvey.description"></textarea>
-    	Image Link: <input class="form-control" type="url" name="Image" ng-model="addSurvey.picUrl">
-    	Python File: <input class="" ng-model="addSurvey.script" type="file" name="script" accept=".py">
-    	Arguments: 
-    	<table>
-    		<tr>
-    			<th>Name</th>
-    			<th>Type</th>
-    		</tr>
-    		<tr ng-repeat="arg in args">
-    			<td>{{arg.name}}</td>
-    			<td>{{arg.type}}</td>
-    		</tr>
-    		<tr>
-    			<td><input type="text" ng-model="addArg.name"></td>
-    			<td>
-    				<select ng-model="addArg.type" ng-options="option in argTypes">
-    					<option>{{option}}</option>
-    				</select>
-    			</td>
-    		</tr>
-    	</table>
+	<h3>Title:</h3> <input class="form-control" type="text" id='title' ng-model="addSurvey.title">
+	<h4>Description:</h4> <textarea class="form-control" rows="10" cols="30" id='description' ng-model="addSurvey.description"></textarea>
+	<h4>Image Link:</h4> <input class="form-control" type="url" id='image' ng-model="addSurvey.picUrl">
+	<h4>Python File:</h4> <input class="" ng-model="addSurvey.script" type='file' id='file' name="script" accept=".py">
+	<h4>Arguments:</h4>
+	<table class="table">
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+		</tr>
+		<tr class='arg' ng-repeat="(i, arg) in addSurvey.args">
+			<td>{{arg.name}}</td>
+			<td>{{arg.type}}</td>
+			<td><a href="" ng-click="removeArg(i)">Remove</a></td>
+		</tr>
+		<tr>
+			<td>
+				<input type="text" id='arg-name' class="form-control" ng-model="addArg.name">
+			</td>
+			<td>
+				<select class="form-control" id='arg-type' ng-model="addArg.type" ng-options="option for option in argTypes">
+					<option>{{option}}</option>
+				</select>
+			</td>
+			<td>
+				<button ng-click="addArgument(addArg)" ng-show="addArg.type != '' && addArg.name != ''" class="btn btn-primary btn-md btn-block">Add</button>
+			</td>
+		</tr>
+	</table>
 
-    	<hr >
 
-    	<input type="submit" ng-show="validate(addSurvey)">
-
-    </form>
+	<button ng-click="submitData(addSurvey)" ng-show="validateData()" class="btn btn-primary btn-md btn-block">Submit</button>
+	<br /> <br />
 
     <!-- {{addSurvey.script}} -->
 
