@@ -9,7 +9,11 @@ app.config.from_pyfile('config.py')
 # Add Key for security things
 
 # Connection
-sql = pyodbc.connect('DRIVER={/usr/lib/x86_64-linux-gnu/odbc/libtdsodbc.so};SERVER='+app.config.get('SQL_HOST')+';DATABASE='+app.config.get('SQL_DB')+';UID='+app.config.get('SQL_USER')+';PWD='+app.config.get('SQL_PASSWORD'))
+sql = pyodbc.connect('DRIVER={/usr/local/etc/odbcinst.ini};'
+'SERVER='+app.config.get('SQL_HOST')+';'
+'DATABASE='+app.config.get('SQL_DB')+';'
+'UID='+app.config.get('SQL_USER')+';'
+'PWD='+app.config.get('SQL_PASSWORD'))+';'
 
 # Add Contexts
 def get_conn():
