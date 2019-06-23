@@ -1,6 +1,6 @@
 import json
 
-def main():
+def main(outName):
 	with open("test.json", 'r') as read_in:
 		in_dict = json.load(read_in)
 
@@ -30,14 +30,15 @@ def main():
 	strOut += "</form>"
 	strOut += "</div></div></body></html>"
 
-	f = open("out.html", 'w+')
+	f = open(outName, 'w+')
 	f.write(strOut)
 	f.close()
 
 
 def getInput(dic_in):
+	name = dic_in['name']
 	ret_val = "<h3>"
-	ret_val += dic_in['name']
+	ret_val += name
 	ret_val += ":</h3>"
 	ret_val += "<input class=\"form-control\" type=\"";
 	if dic_in['type'] == 'float' or dic_in['type'] == 'int':
@@ -45,9 +46,9 @@ def getInput(dic_in):
 	elif dic_in['type'] == 'string':
 		ret_val += 'text'
 
-	ret_val += "\" id=\"\" class=\"\" name=\""
+	ret_val += "\" id=\""+name.replace(" ", "-")+"\" name=\""
 	ret_val += dic_in['name']
 	ret_val += "\">"
 	return(ret_val)
 
-main()
+main('out.html')
