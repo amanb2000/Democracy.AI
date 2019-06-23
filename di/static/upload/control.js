@@ -48,15 +48,16 @@ app.controller("control", function($scope, $interval) {
       field = $(dom);
       argsDict[field.children().first().html()] = field.children().first().next().html();
     });
+    var file = new FormData($('#file-form')[0]);
+    // file.append('file', $('#fle')[0].files[0])
+    console.log(file);
     // POST ML
     $.post({
       url: "/addAlgoFile",
       cache: false,
       contentType: false,
       processData: false,
-      data: {
-        'file': new FormData($('#file')[0])
-      },
+      data: new FormData($('#file-form')[0]),
       success: function(data) {
         // POST DATAS
         $.post({
@@ -65,9 +66,10 @@ app.controller("control", function($scope, $interval) {
             'title': $('#title').val(),
             'description': $('#description').val(),
             'picUrl': $('#image').val(),
+            'filePath': data,
             'args': argsDict
           },
-          success: function(data) {
+          success: function(dt) {
             console.log("Closing the loading dots that bae made <3");
           }
         });

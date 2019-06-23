@@ -8,7 +8,9 @@
 	<h3>Title:</h3> <input class="form-control" type="text" id='title' ng-model="addSurvey.title">
 	<h4>Description:</h4> <textarea class="form-control" rows="10" cols="30" id='description' ng-model="addSurvey.description"></textarea>
 	<h4>Image Link:</h4> <input class="form-control" type="url" id='image' ng-model="addSurvey.picUrl">
-	<h4>Python File:</h4> <input class="" ng-model="addSurvey.script" type='file' id='file' name="script" accept=".py">
+	<form id='file-form' method="post" enctype="multipart/form-data">
+	<h4>Python File:</h4> <input class="" ng-model="addSurvey.script" type='file' id='fle' name="script" accept=".py">
+</form>
 	<h4>Arguments:</h4>
 	<table class="table">
 		<tr>

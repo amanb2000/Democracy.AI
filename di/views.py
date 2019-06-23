@@ -25,4 +25,4 @@ def instantiate_register():
 @app.route("/create")
 @login_required
 def instantiate_creator():
-	return "nope"
+	return render_template("appCreate.html")
