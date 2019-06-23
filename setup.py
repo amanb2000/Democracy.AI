@@ -6,7 +6,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'flask',
-        'pyodbc',
+        'flask-mysql',
         'flask-bcrypt'
     ],
 )

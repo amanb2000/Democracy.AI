@@ -1,6 +1,6 @@
 DEBUG=True
 
-SQL_HOST = "bisolutions.database.windows.net"
-SQL_USER = "lord_of_all"
-SQL_PASSWORD = "admin123!"
-SQL_DB = "bi_main"
+MYSQL_DATABASE_HOST = "localhost"
+MYSQL_DATABASE_USER = "root"
+MYSQL_DATABASE_PASSWORD = "root"
+MYSQL_DATABASE_DB = "di_main"

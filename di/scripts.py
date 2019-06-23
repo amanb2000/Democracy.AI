@@ -4,8 +4,6 @@ from flask import request
 @app.route("/downloadML", methods=['POST'])
 def download_bigboi():
 	id = request.form['id']
-
-
 	return "no can do, soz"
 
 @app.route("/voteML", methods=['POST'])
