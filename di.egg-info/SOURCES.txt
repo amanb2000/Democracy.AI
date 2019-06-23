@@ -1,6 +1,7 @@
 README.md
 setup.py
 di/__init__.py
+di/models.py
 di/scripts.py
 di/views.py
 di.egg-info/PKG-INFO

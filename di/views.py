@@ -1,4 +1,4 @@
-from di import app, get_conn
+from di import app, get_conn, login_required
 from flask import render_template
 
 @app.route("/")
@@ -21,3 +21,8 @@ def instantiate_login():
 @app.route("/register")
 def instantiate_register():
 	return render_template("login/register.html")
+
+@app.route("/create")
+@login_required
+def instantiate_creator():
+	return "nope"

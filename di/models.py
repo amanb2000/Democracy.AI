@@ -1,0 +1,2 @@
+from di import app
+

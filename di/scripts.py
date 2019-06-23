@@ -1,16 +1,32 @@
-from di import app
+from di import app, get_conn, get_user, add_user
 from flask import request
 from flask_bcrypt import generate_password_hash, check_password_hash
 
 @app.route("/addUser", methods=['POST'])
-def add_user():
+def register_user():
 	# Get DB
     cursor = get_conn().cursor()
     # Build query
     query = "INSERT INTO users (username, password, email) VALUES (%s, %s, %s)"
-    cursor.execute(query, (request.form['user'], generate_password_hash(request.form['password']), request.form['email']))
+    cursor.execute(query, (request.form['user'], generate_password_hash(request.form['pass']), request.form['email']))
     get_conn().commit()
     return ""
+
+@app.route("/loginUser", methods=['POST'])
+def login_user():
+	# Get DB
+    cursor = get_conn().cursor()
+    # Build query
+    query = "SELECT user_id, password FROM users WHERE username = %s LIMIT 1"
+    cursor.execute(query, (request.form['user']))
+    usr = cursor.fetchall()[0]
+    if (check_password_hash(usr[1], request.form['pass'])):
+    	query = "SELECT user_id, username, email FROM users WHERE user_id = %s LIMIT 1"
+    	cursor.execute(query, (usr[0]))
+    	add_user(cursor.fetchall()[0])
+    	return "0"
+    return "-1"
+
 
 @app.route("/downloadML", methods=['POST'])
 def download_bigboi():
