@@ -52,11 +52,11 @@
       }
 
       $.post({
-        url: "/register",
+        url: "/addUser",
         data: {
           'user': usr,
           'pass': pss,
-          'email': email,
+          'email': email
         },
         success: function(data) {
           alert('Successfully registered user!');
