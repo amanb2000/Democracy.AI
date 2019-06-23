@@ -1,7 +1,7 @@
 import json
 
-def main(outName):
-	with open("test.json", 'r') as read_in:
+def main(outName, JSON_path, to_url):
+	with open(JSON_path, 'r') as read_in:
 		in_dict = json.load(read_in)
 
 	strOut = "<!DOCTYPE html><html><head><title>"
@@ -25,10 +25,32 @@ def main(outName):
 		strOut += getInput(i);
 		strOut += "<br />"
 
-	strOut += "<input class=\"btn btn-primary btn-lg btn-block\" type=\"submit\">"
+	strOut += "<input onclick = \"submit()\" class=\"btn btn-primary btn-lg btn-block\" type=\"submit\">"
 
 	strOut += "</form>"
-	strOut += "</div></div></body></html>"
+	strOut += "</div></div><script>"
+
+	strOut += '''
+	function submit() {
+		// POST DATAS
+		$.post({
+		  url: \''''+to_url+'''\',
+		  data: {
+		  	'''
+	for i in in_dict['args']:
+		strOut += getPoster(i);
+	strOut += '''
+		  },
+		  success: function(dt) {
+			window.location.href = "/";
+		  }
+		});
+	}
+	'''
+
+
+
+	strOut += "</script></body></html>"
 
 	f = open(outName, 'w+')
 	f.write(strOut)
@@ -51,4 +73,9 @@ def getInput(dic_in):
 	ret_val += "\">"
 	return(ret_val)
 
-main('out.html')
+def getPoster(dic_in):
+	name = dic_in['name']
+	ret_val= "\'"+name+"\': $(\'#"+name.replace(" ", "-")+"\').val(),"
+	return ret_val
+	#$('#username').val();
+main('out.html', 'test.json', '/assets')
