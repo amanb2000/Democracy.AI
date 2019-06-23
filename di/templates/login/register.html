@@ -40,7 +40,7 @@
     </div>
 
   <script>
-    function login() {
+    function register() {
       var usr = $('#username').val();
       var pss = $('#pass').val();
       var pss2 = $('#pass2').val();
@@ -51,8 +51,19 @@
         return;
       }
 
-      console.log('Username: ' + usr);
-      console.log('Password: ' + pss);
+      $.post({
+        url: "/register",
+        data: {
+          'user': usr,
+          'pass': pss,
+          'email': email,
+        },
+        success: function(data) {
+          alert('Successfully registered user!');
+        }
+      });
+
+
     }
   </script>
 

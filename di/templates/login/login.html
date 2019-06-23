@@ -42,8 +42,16 @@
       var usr = $('#username').val();
       var pss = $('#pass').val();
 
-      console.log('Username: ' + usr);
-      console.log('Password: ' + pss);
+			$.post({
+        url: "/login",
+        data: {
+          'user': usr,
+          'pass': pss,
+        },
+        success: function(data) {
+					window.location.href = "/";
+        }
+      });
     }
   </script>
 
